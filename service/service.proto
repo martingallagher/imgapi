@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package service;
+
+message DownloadRequest {
+  string id = 1;
+  string format = 2;
+}
+
+message UploadRequest {
+  bytes data = 1;
+}
+
+message Image {
+  string id = 1;
+  string format = 2;
+  bytes data = 3;
+}
+
+message UploadResponse {
+  string id = 1;
+}
+
+service ImgAPI {
+  rpc Upload(UploadRequest) returns (UploadResponse) {}
+  rpc Download(DownloadRequest) returns (Image) {}
+}

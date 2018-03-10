@@ -1,0 +1,4 @@
+dataDir: /tmp/imgapi
+dirDepth: 5
+network: unix
+address: /tmp/imgapi.sock
